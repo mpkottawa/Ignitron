@@ -55,6 +55,22 @@ Software: [click here](https://github.com/stangreg/Ignitron/blob/main/src/)
 
 Hardware: [click here](https://github.com/stangreg/Ignitron/blob/main/hardware/)
 
+## Ignitron Preset Tools 2.0 support
+
+This fork includes the serial protocol used by Ignitron Preset Tools 2.0.
+Connect to Ignitron's USB serial port at `115200` baud and terminate commands
+with a newline.
+
+| Command | Response |
+| --- | --- |
+| `LISTPRESETS` | Emits every root-level JSON preset between `LISTPRESETS_START` and `LISTPRESETS_DONE`. Each preset is returned on one `JSON STRING:` line. |
+| `LISTBANKS` | Emits `/PresetList.txt` between `LISTBANKS_START` and `LISTBANKS_DONE`. |
+
+Presets received from the Spark app are also emitted to serial so IPT can
+capture them. Release binaries are built for the `node32s` PlatformIO
+environment; use the matching bootloader, partition table, and firmware files
+at the offsets documented in the release notes.
+
 # Operating Ignitron
 
 ## Table of contents

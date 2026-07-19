@@ -118,7 +118,7 @@ void loop() {
     // Update battery level
     spark_dc.updateBatteryLevel();
 #endif
-    // test ignitron preset tools
+    // Process commands from Ignitron Preset Tools.
     handleSerialCommands();
     // Update LED status
     spark_led.updateLEDs();
